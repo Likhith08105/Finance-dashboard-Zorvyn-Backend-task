@@ -1,4 +1,4 @@
-// Mock authentication middleware using headers
+// mock authentication middleware using headers
 const User = require('../models/User');
 
 module.exports = async (req, res, next) => {

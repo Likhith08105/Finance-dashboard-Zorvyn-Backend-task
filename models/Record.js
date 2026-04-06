@@ -1,4 +1,4 @@
-// Financial Record model
+// financial record model
 const mongoose = require('mongoose');
 
 const recordSchema = new mongoose.Schema({

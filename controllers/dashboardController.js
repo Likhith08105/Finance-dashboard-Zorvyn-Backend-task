@@ -1,4 +1,4 @@
-// Dashboard controller
+// dashboard controller
 const dashboardService = require('../services/dashboardService');
 
 module.exports = {
