@@ -6,7 +6,7 @@ module.exports = {
     return await Record.create(data);
   },
   async getRecords(filter, options) {
-    const { skip, limit } = options;
+    const { skip = 0, limit = 10 } = options || {};
     return await Record.find(filter).sort({ date: -1 }).skip(skip).limit(limit);
   },
   async countRecords(filter) {
