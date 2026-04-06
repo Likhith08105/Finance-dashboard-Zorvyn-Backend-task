@@ -1,4 +1,4 @@
-# Finance Dashboard Backend
+# Finance Dashboard Backend task Zorvyn
 
 Tech stack - Node.js + Express + MongoDB backend for finance data processing and access control.
 
@@ -104,3 +104,15 @@ Response: 200 OK
 3. `npm start`
 4. Use `x-user-id` header for mock auth
 
+
+## 4.Assumptions
+
+- users are already created and assigned roles manually
+- authentication is handled in a simple way using request headers
+- all records are stored for a single system, not multiple users
+
+## 5.Trade-offs
+
+- used simple auth instead of full login system to save time
+- focused more on backend logic than security features
+- kept implementation simple instead of highly optimized
