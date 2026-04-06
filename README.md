@@ -1,6 +1,6 @@
 # Finance Dashboard Backend
 
-A clean, layered Node.js + Express + MongoDB backend for finance data processing and access control.
+Tech stack - Node.js + Express + MongoDB backend for finance data processing and access control.
 
 ## Folder Structure
 ```
@@ -14,7 +14,7 @@ app.js            # Main entry
 .env              # Environment config
 ```
 
-## Features
+## 1.Features
 - User management (CRUD, roles, active status)
 - Financial records CRUD, filtering, pagination, soft delete
 - Dashboard summary (income, expense, net, category breakdown, recent)
@@ -22,22 +22,22 @@ app.js            # Main entry
 - Input validation and error handling
 - Mock authentication via `x-user-id` header
 
-## Example API Responses
+## 2.Example API Responses
 
 ### Create User (Admin only)
 ```
 POST /users
 {
-  "name": "Alice",
-  "email": "alice@example.com",
-  "role": "analyst"
+  "name": "likhith",
+  "email": "likkie@gmail.com",
+  "role": "sde"
 }
 Response: 201 Created
 {
   "_id": "...",
-  "name": "Alice",
-  "email": "alice@example.com",
-  "role": "analyst",
+  "name": "kumar",
+  "email": "Kumar@gmail.com",
+  "role": "Backend",
   "isActive": true
 }
 ```
@@ -47,7 +47,7 @@ Response: 201 Created
 GET /users
 Response: 200 OK
 [
-  { "_id": "...", "name": "Alice", "role": "analyst", ... }
+  { "_id": "...", "name": "likki", "role": "sde", ... }
 ]
 ```
 
@@ -57,7 +57,7 @@ POST /records
 {
   "amount": 1000,
   "type": "income",
-  "category": "Salary",
+  "category": "salary",
   "date": "2026-04-05",
   "notes": "April salary"
 }
@@ -66,7 +66,7 @@ Response: 201 Created
   "_id": "...",
   "amount": 1000,
   "type": "income",
-  "category": "Salary",
+  "category": "salary",
   "date": "2026-04-05T00:00:00.000Z",
   "notes": "April salary",
   "createdBy": "..."
@@ -93,24 +93,14 @@ Response: 200 OK
   "totalIncome": 1000,
   "totalExpense": 500,
   "netBalance": 500,
-  "categoryTotals": { "Salary": 1000, "Food": 500 },
+  "categoryTotals": { "salary": 1000, "food": 500 },
   "recent": [ ... ]
 }
 ```
 
-## Setup
+## 3.Setup
 1. `npm install`
 2. Set up MongoDB (default: `mongodb://localhost:27017/finance`)
 3. `npm start`
 4. Use `x-user-id` header for mock auth
 
-## Assumptions
-- No password/auth logic (mock only)
-- Soft delete for records
-- Simple validation (can be extended)
-
-## Improvements
-- Add real authentication (JWT)
-- Add more validation
-- Add tests
-- Add OpenAPI docs
