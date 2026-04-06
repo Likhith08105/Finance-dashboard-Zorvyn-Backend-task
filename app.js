@@ -16,3 +16,6 @@ app.use(auth);
 app.use('/users', userRoutes);
 app.use('/records', recordRoutes);
 app.use('/dashboard', dashboardRoutes);
+app.use(errorHandler);
+
+module.exports = app;
